@@ -42,6 +42,15 @@ describe("Create birthday component", () => {
 
   test("Should match the snapshot", async () => {
     const wrapper = mount(<CreateBirthday state={event} store={store} />);
+    wrapper.find("#name").simulate("change", { target: { value: "name" } });
+    wrapper.find("#date").simulate("change", { target: { value: "date" } });
+    wrapper
+      .find("#whatsappNumber")
+      .simulate("change", { target: { value: "whatsappNumber" } });
+    wrapper
+      .find("textarea")
+      .simulate("change", { target: { value: "textarea" } });
+    wrapper.find("form").simulate("submit");
     expect(wrapper).toMatchSnapshot();
   });
 

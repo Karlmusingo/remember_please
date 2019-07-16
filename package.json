@@ -5,14 +5,6 @@
   "repository": "https://github.com/Karlmusingo/remember_please.git",
   "author": "karlmusingo <karlemusingo@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-jest": "^24.8.0",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.2",
-    "enzyme-to-json": "^3.3.5"
-  },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -32,7 +24,8 @@
     "test": "jest --coverage",
     "coverage": "jest --detectOpenHandles --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "start": "NODE_ENV=development webpack-dev-server --open",
-    "build": "NODE_ENV=production webpack --mode production"
+    "build": "NODE_ENV=production webpack --mode production",
+    "start:heroku": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -84,5 +77,12 @@
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
+    "enzyme-to-json": "^3.3.5"
   }
 }

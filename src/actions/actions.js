@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchEvents = () => async dispatch => {
   const { data: payload } = await axios.get(
-    `https://remembermeplease.herokuapp.com/events/`
+    `${process.env.BACKEND_URL}/events/`
   );
 
   return dispatch({
@@ -29,11 +29,7 @@ export const addEvent = event => async () => {
       type: "Birthday"
     };
 
-    const res = await axios.post(
-      "https://remembermeplease.herokuapp.com/events/",
-      data
-    );
-
+    const res = await axios.post(`${process.env.BACKEND_URL}/events/`, data);
 
     return res.data;
   } catch (error) {
